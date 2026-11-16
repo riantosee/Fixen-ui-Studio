@@ -15,7 +15,7 @@ Prioritaskan petunjuk yang mengubah keputusan agen secara konkret. Hindari mempe
 1. Fork repo dan buat branch untuk satu perubahan yang terfokus.
 2. Edit paket di `skills/fixen-ui-studio/`; jangan mengubah instalasi global pengguna.
 3. Kaitkan referensi baru dari entrypoint atau referensi yang relevan dan jelaskan kapan dibaca. Jangan memaksa semua referensi dimuat setiap tugas.
-4. Jalankan `python -m pip install -r requirements-dev.txt` lalu `python scripts/validate.py`.
+4. Jalankan `python -m pip install -r requirements-dev.txt`, `python scripts/validate.py`, dan `python -m unittest discover -s scripts -p "test_*.py" -v`.
 5. Untuk perubahan perilaku, jalankan setidaknya satu brief realistis yang relevan. Sertakan prompt, kondisi alat, hasil, dan hal yang tidak diuji. Perubahan dokumentasi kecil tidak wajib menjalankan seluruh benchmark.
 6. Buka PR dengan masalah, hasil perubahan, dan bukti validasi. Tautkan issue bila ada.
 

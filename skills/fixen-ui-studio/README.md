@@ -16,6 +16,8 @@ Fixen UI Studio helps an AI agent work through the full interface lifecycle: und
 
 ## Install
 
+Current repository: [riantosee/Fixen-ui-Studio](https://github.com/riantosee/Fixen-ui-Studio). Read the canonical [contribution guide](https://github.com/riantosee/Fixen-ui-Studio/blob/main/CONTRIBUTING.md), [Security Policy](https://github.com/riantosee/Fixen-ui-Studio/blob/main/SECURITY.md), and [Code of Conduct](https://github.com/riantosee/Fixen-ui-Studio/blob/main/CODE_OF_CONDUCT.md) before participating. This standalone folder retains the complete MIT License. Security/community policies govern conduct and do not narrow MIT's commercial-use or redistribution permissions.
+
 Copy the `fixen-ui-studio/` directory into the skill directory supported by your agent. The exact installation path differs by agent. The skill uses the open Agent Skills `SKILL.md` convention and avoids requiring a specific model vendor.
 
 ## Use

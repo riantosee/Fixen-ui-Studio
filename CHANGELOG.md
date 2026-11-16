@@ -7,6 +7,7 @@
 - Added explicit responsible-use boundaries and private vulnerability-reporting guidance.
 - Added the optional real-image sourcing workflow, asset register, and asset-sourcing benchmark cases.
 - Updated the Codex invocation identifier to `$fixen-ui-studio`.
+- Restored complete MIT disclaimer text in the distributable package, consolidated the scoring formula into one rubric, and linked previously undiscoverable references.
 
 ## 1.1.0
 

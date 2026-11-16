@@ -4,10 +4,12 @@ This document records package checks for the first public rebrand release. It is
 
 ## Package checks
 
-- `scripts/validate.py` checks frontmatter, name, description length, default prompt, unfinished TODO markers, entrypoint references, and symlinks.
+- `scripts/validate.py` checks frontmatter, name, description length, default prompt, unfinished TODO markers, package boundaries, entrypoint references, symlinks, repository YAML syntax, and local Markdown links.
 - GitHub Actions runs the same validator with Python and PyYAML on pushes and pull requests.
 - The package contains no executable helper besides the read-only validator. The skill itself is Markdown/YAML guidance.
 - The current release keeps the original image-sourcing guidance and adds root-level policies/documentation.
+
+Local release checks passed: the bundled Codex `quick_validate.py` with PyYAML available, the repository validator (25 entrypoint references), and six validator regression tests. The tests cover a minimal valid package, wrong invocation, missing reference, an escaping reference, and valid/broken Markdown links. These are package/validator checks, not UI behavior benchmarks. They run in a project-local virtual environment rather than changing global Python packages.
 
 ## Scope
 

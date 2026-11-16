@@ -1,10 +1,8 @@
 # Contributing
 
-1. Keep `SKILL.md` concise and route detailed guidance to reference files.
-2. Add guidance only when it improves repeatability across tasks.
-3. Add benchmark cases that test a distinct product context or failure mode.
-4. Keep benchmark prompts neutral and reproducible.
-5. Never claim benchmark wins without published protocol and evidence.
-6. Test skill behavior with at least one design, redesign, audit, and implementation task.
-7. Document tool requirements and graceful fallbacks.
+The canonical process lives in the [repository contribution guide](https://github.com/riantosee/Fixen-ui-Studio/blob/main/CONTRIBUTING.md).
+
+Keep the entrypoint concise, add only decision-relevant guidance, link conditional references, and test changed behavior with a realistic synthetic brief. Report only checks actually performed. Read the repository [Security Policy](https://github.com/riantosee/Fixen-ui-Studio/blob/main/SECURITY.md) before reporting vulnerabilities; do not include secrets, private data, or active exploits in public issues.
+
+Contributions are accepted under MIT. Community/security policies do not narrow MIT's permissions. Consult the repository for current policies when using this skill as a standalone package.
 

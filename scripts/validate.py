@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import re
-import sys
 from pathlib import Path
 
 import yaml
@@ -52,13 +51,30 @@ def main() -> None:
     references = sorted(set(re.findall(r"`([^`\n]+\.md)`", text)))
     for reference in references:
         target = SKILL / reference
+        if not target.resolve().is_relative_to(SKILL.resolve()):
+            fail(f"entrypoint reference escapes skill package: {reference}")
         if not target.is_file():
             fail(f"broken entrypoint reference: {reference}")
     for unwanted in SKILL.rglob("*"):
         if unwanted.is_symlink():
             fail(f"symlink is not allowed: {unwanted}")
+    for pattern in ("*.yml", "*.yaml"):
+        for config in ROOT.rglob(pattern):
+            if any(part in {".git", ".venv", "node_modules"} for part in config.relative_to(ROOT).parts):
+                continue
+            yaml.safe_load(config.read_text(encoding="utf-8"))
+    for doc in ROOT.rglob("*.md"):
+        if any(part in {".git", ".venv", "node_modules"} for part in doc.relative_to(ROOT).parts):
+            continue
+        for link in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", doc.read_text(encoding="utf-8")):
+            if "://" in link or link.startswith(("#", "mailto:")):
+                continue
+            destination = (doc.parent / link.split("#", 1)[0]).resolve()
+            if not destination.is_relative_to(ROOT.resolve()) or not destination.exists():
+                fail(f"broken/outside local Markdown link in {doc.relative_to(ROOT)}: {link}")
     print(f"Validated {SKILL}")
     print(f"Checked {len(references)} entrypoint references")
+    print("Repository YAML syntax and local Markdown links passed")
 
 
 if __name__ == "__main__":
