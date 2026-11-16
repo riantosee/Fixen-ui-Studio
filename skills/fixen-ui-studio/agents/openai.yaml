@@ -1,0 +1,5 @@
+interface:
+  display_name: "Fixen UI Studio"
+  short_description: "Design distinctive, polished interfaces and implement them"
+  default_prompt: "Use $fixen-ui-studio for the requested interface or image-sourcing task. Choose a proportionate design, implementation, or audit workflow and report only verified results."
+
