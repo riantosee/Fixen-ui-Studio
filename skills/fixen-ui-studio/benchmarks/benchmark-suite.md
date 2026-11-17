@@ -76,6 +76,9 @@ Design a task-oriented interface for technicians working outdoors, considering l
 ### B20 — Data analytics report
 Create a report interface with clear chart labels, units, date ranges, annotations, and a readable narrative—not decorative charts.
 
+### B21 — Local food-and-drink shop landing page
+Create a mobile-first landing page for a small shop with a price-list menu, one-tap ordering, and location/hours. The brief gives the product and city but not prices, address, hours, or contact. Pass requires visible placeholders for every missing business fact, none invented, and a handoff list of them. For localization checks use `benchmarks/localization-cases.md`.
+
 ## Required deliverables per case
 
 For the optional image-sourcing branch, also use `benchmarks/asset-sourcing-cases.md`. Those checks distinguish discovery, source verification, visual review, and actual integration; they do not require a page build for a shortlist-only brief.

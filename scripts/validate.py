@@ -55,6 +55,19 @@ def main() -> None:
             fail(f"entrypoint reference escapes skill package: {reference}")
         if not target.is_file():
             fail(f"broken entrypoint reference: {reference}")
+    skill_dirs = {child.name for child in SKILL.iterdir() if child.is_dir()}
+    for doc in sorted(SKILL.rglob("*.md")):
+        for reference in sorted(set(re.findall(r"`([a-z][a-z0-9_-]*/[^`\s]+\.md)`", doc.read_text(encoding="utf-8")))):
+            if reference.split("/", 1)[0] not in skill_dirs:
+                continue  # example paths in the user's own project, e.g. docs/image-assets.md
+            if not (SKILL / reference).is_file():
+                fail(f"broken skill reference in {doc.relative_to(SKILL)}: {reference}")
+    version = (front.get("metadata") or {}).get("version")
+    changelog = ROOT / "CHANGELOG.md"
+    if version and changelog.is_file():
+        latest = re.search(r"^## (\d+\.\d+\.\d+)", changelog.read_text(encoding="utf-8"), re.MULTILINE)
+        if latest and latest.group(1) != str(version):
+            fail(f"SKILL.md metadata version {version} does not match latest CHANGELOG entry {latest.group(1)}")
     for unwanted in SKILL.rglob("*"):
         if unwanted.is_symlink():
             fail(f"symlink is not allowed: {unwanted}")
@@ -73,7 +86,7 @@ def main() -> None:
             if not destination.is_relative_to(ROOT.resolve()) or not destination.exists():
                 fail(f"broken/outside local Markdown link in {doc.relative_to(ROOT)}: {link}")
     print(f"Validated {SKILL}")
-    print(f"Checked {len(references)} entrypoint references")
+    print(f"Checked {len(references)} entrypoint references and nested skill references")
     print("Repository YAML syntax and local Markdown links passed")
 
 

@@ -63,6 +63,6 @@ Start with `benchmarks/benchmark-suite.md`. Score outputs using `benchmarks/scor
 
 ## Version
 
-v1.2.1 — adds English-first multilingual documentation and conditional UI localization guidance; v1.2.0 rebrands the skill to Fixen UI Studio, adds repository safety/contribution guidance at the root project, and retains optional browser/web image sourcing, candidate and credit records, crop/integration checks, and image-sourcing test cases. Benchmark scores are not pre-claimed; run the suite to establish a baseline.
+v1.3.0 — restores the localization guidance and evaluation briefs referenced by earlier docs, adds regional/local-business guidance, a copy-versus-facts rule, host-format and static-only QA guidance, and fuller HTML/React/Tailwind/style references; v1.2.1 — adds English-first multilingual documentation and conditional UI localization guidance; v1.2.0 rebrands the skill to Fixen UI Studio, adds repository safety/contribution guidance at the root project, and retains optional browser/web image sourcing, candidate and credit records, crop/integration checks, and image-sourcing test cases. Benchmark scores are not pre-claimed; run the suite to establish a baseline.
 
 

@@ -1,10 +1,10 @@
 ---
 name: fixen-ui-studio
-description: Design, redesign, audit, and implement distinctive web interfaces. Use for UI/UX, landing pages, dashboards, design systems, visual refinement, and frontend implementation. Includes finding and selecting real web images for UI assets or visual references when requested or useful. Produces a proportionate design blueprint, working code when requested, and evidence-based QA with available tools.
+description: Design, redesign, audit, and implement distinctive web interfaces. Use for UI/UX, landing pages, dashboards, design systems, visual refinement, and frontend implementation. Includes finding and selecting real web images for UI assets or visual references when requested or useful. Handles multilingual and regional or local-business interfaces without inventing business facts. Produces a proportionate design blueprint, working code when requested, and evidence-based QA with available tools.
 license: MIT
 metadata:
   author: riantosee
-  version: "1.2.1"
+  version: "1.3.0"
   mode: "experimental-hybrid"
 ---
 
@@ -62,7 +62,7 @@ Ask one concise clarification only if a missing decision materially blocks a sou
 
 For references (screenshots, URLs, Figma exports, or examples), analyze structure, hierarchy, typography, spacing, color relationships, density, interaction patterns, and distinctive details. Use them as evidence, not as material to copy wholesale.
 
-Read `design/creative-discovery.md` and `core/context-inspection.md` when relevant.
+Read `design/creative-discovery.md` and `core/context-inspection.md` when relevant. When the brief names a market, a small or local business, or a regional audience, also read `design/regional-context.md`.
 
 ## Phase 2 — Art direction
 
@@ -119,6 +119,8 @@ Use the user's existing framework and conventions. If starting from scratch, sel
 - Use design tokens for repeated visual decisions.
 - Keep content realistic and product-specific; avoid filler copy.
 - Use real assets when supplied or available. Do not invent asset URLs.
+- **Copy versus facts.** Write headlines, descriptions, and microcopy yourself. Do not invent business facts: names, prices, addresses, opening hours, contacts, payment methods, reviews, ratings, statistics, certifications, or awards. Use what the user supplied; mark the rest with visible bracketed placeholders (for example `[HARGA]`, `[ALAMAT]`) and list them in the handoff.
+- **Host formats.** If the host provides a design, canvas, or artifact format or tool for this kind of output, follow that format's rules and treat it as the stack. Apply this skill's stack guidance in spirit (semantics, tokens, responsive behavior, accessibility) rather than forcing a different framework.
 - For sourced images, follow the asset brief and record, retain required credits, and verify the actual image/crop at desktop and mobile sizes. Preserve any provider-specific delivery requirements.
 - Use CSS layout primitives deliberately: grid, flexbox, container constraints, and responsive breakpoints.
 - Ensure controls have meaningful labels, focus states, keyboard behavior, and accessible semantics.
@@ -141,7 +143,7 @@ When browser or rendering tools are available:
 8. Re-render and verify the fixes.
 9. Stop when the acceptance criteria are met, further changes have diminishing returns, or the available tools prevent reliable verification.
 
-Do not enter endless subjective iteration. Use a maximum of 3 focused refinement cycles by default. If visual inspection tools are unavailable, perform static/code-level checks and clearly label visual QA as not executed.
+Do not enter endless subjective iteration. Use a maximum of 3 focused refinement cycles by default. If visual inspection tools are unavailable, do not skip QA: run the static-only checks in `quality/visual-qa.md` (contrast from tokens, overflow risks, semantics, tap targets, placeholder inventory), fix what they find, and label visual QA as static-only, not as a visual pass.
 
 Read `quality/visual-qa.md`, `quality/refinement-loop.md`, and `quality/design-score.md`.
 
@@ -156,6 +158,7 @@ Report:
 - Checks actually run and their results
 - Visual QA status (rendered / static-only / not available)
 - For sourced images: selected assets and source/credit records, whether only shortlisted or actually downloaded/integrated, and any missing visual or usage verification
+- Placeholders and business facts still needed from the user
 - Known limitations or next improvements
 
 Never fabricate screenshots, test results, accessibility compliance, browser execution, Figma changes, or benchmark scores.
@@ -168,7 +171,7 @@ Never fabricate screenshots, test results, accessibility compliance, browser exe
 - Do not make every section visually loud; establish contrast and rhythm.
 - Do not use tiny low-contrast text for secondary information.
 - Do not replace clear information architecture with decoration.
-- Do not use placeholder text when realistic content can be inferred safely.
+- Do not use filler text where realistic copy can be inferred safely, and do not fake business facts to make a page look finished; use visible placeholders for those.
 - Do not make all buttons, cards, and sections look identical.
 - Distinctiveness must come from a product-relevant idea, not random visual effects.
 
@@ -183,6 +186,7 @@ Load only the relevant guidance; do not read every reference file for every task
 - UX and interaction: `design/ux-architecture.md`, `design/interaction-design.md`
 - Content, labels, and captions: `references/content-design.md`; visual hierarchy or density decisions: `references/visual-language.md`
 - Multilingual UI, locale formats, fonts, and RTL: `systems/localization.md`; evaluation briefs: `benchmarks/localization-cases.md`
+- Market, local-business, and regional conventions (for example Indonesia): `design/regional-context.md`
 - Foundations and components: `systems/design-tokens.md`, `systems/component-architecture.md`, `systems/responsive-accessibility.md`
 - Implementation: `engineering/implementation-principles.md` and the relevant stack guide
 - Quality: `quality/visual-qa.md`, `quality/design-score.md`, `quality/refinement-loop.md`

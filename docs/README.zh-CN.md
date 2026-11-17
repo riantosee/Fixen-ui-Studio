@@ -6,11 +6,11 @@
 
 Fixen UI Studio 是面向 AI 智能体的开源技能，用于设计、实现、审查和改进 Web 界面。它将产品调研、艺术指导、用户体验、前端实现、视觉检查，以及按需进行的真实图片检索整合为可调整的工作流程。
 
-**v1.2.1 · 实验阶段。** 项目原名为 Fixenzo UI Studio，通过 `$fixen-ui-studio` 调用。本技能是 Markdown/YAML 指令包；模型、工具和权限由智能体运行环境提供。
+**v1.3.0 · 实验阶段。** 项目原名为 Fixenzo UI Studio，通过 `$fixen-ui-studio` 调用。本技能是 Markdown/YAML 指令包；模型、工具和权限由智能体运行环境提供。
 
 ## 安装
 
-从 [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases) 下载 `fixen-ui-studio-v1.2.1.zip`，将 `fixen-ui-studio/` 文件夹解压到 Codex 技能目录，确保入口文件位于：
+从 [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases) 下载 `fixen-ui-studio-v1.3.0.zip`，将 `fixen-ui-studio/` 文件夹解压到 Codex 技能目录，确保入口文件位于：
 
 ```text
 ~/.codex/skills/fixen-ui-studio/SKILL.md

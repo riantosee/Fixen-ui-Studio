@@ -6,11 +6,11 @@
 
 Fixen UI Studio é uma habilidade de código aberto para agentes de IA que projetam, implementam, avaliam e aprimoram interfaces web. O fluxo reúne descoberta do produto, direção de arte, UX, desenvolvimento frontend, revisão visual e busca opcional de imagens reais.
 
-**v1.2.1 · Experimental.** O nome anterior era Fixenzo UI Studio. Use `$fixen-ui-studio` para invocar a habilidade. O pacote contém instruções Markdown/YAML; o agente hospedeiro fornece o modelo, as ferramentas e as permissões.
+**v1.3.0 · Experimental.** O nome anterior era Fixenzo UI Studio. Use `$fixen-ui-studio` para invocar a habilidade. O pacote contém instruções Markdown/YAML; o agente hospedeiro fornece o modelo, as ferramentas e as permissões.
 
 ## Instalação
 
-Baixe `fixen-ui-studio-v1.2.1.zip` em [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Extraia a pasta `fixen-ui-studio/` no diretório de habilidades do Codex, de modo que o arquivo de entrada fique em:
+Baixe `fixen-ui-studio-v1.3.0.zip` em [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Extraia a pasta `fixen-ui-studio/` no diretório de habilidades do Codex, de modo que o arquivo de entrada fique em:
 
 ```text
 ~/.codex/skills/fixen-ui-studio/SKILL.md

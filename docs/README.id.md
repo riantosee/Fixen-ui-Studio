@@ -6,11 +6,11 @@
 
 Fixen UI Studio adalah Agent Skill open source untuk merancang, membangun, mengaudit, dan memperbaiki antarmuka web. Alurnya mencakup discovery, art direction, UX, implementasi frontend, QA visual, serta pencarian gambar nyata bila diperlukan.
 
-**v1.2.1 · Eksperimental.** Sebelumnya bernama Fixenzo UI Studio. Panggil dengan `$fixen-ui-studio`. Paket ini berisi instruksi Markdown/YAML; model, alat, dan izin disediakan oleh agen/host.
+**v1.3.0 · Eksperimental.** Sebelumnya bernama Fixenzo UI Studio. Panggil dengan `$fixen-ui-studio`. Paket ini berisi instruksi Markdown/YAML; model, alat, dan izin disediakan oleh agen/host.
 
 ## Instalasi
 
-Unduh `fixen-ui-studio-v1.2.1.zip` dari [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Ekstrak folder `fixen-ui-studio/` ke direktori skills Codex sehingga entrypoint berada di:
+Unduh `fixen-ui-studio-v1.3.0.zip` dari [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Ekstrak folder `fixen-ui-studio/` ke direktori skills Codex sehingga entrypoint berada di:
 
 ```text
 ~/.codex/skills/fixen-ui-studio/SKILL.md

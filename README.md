@@ -8,7 +8,7 @@ English · [Bahasa Indonesia](docs/README.id.md) · [Español](docs/README.es.md
 
 Fixen UI Studio is an open source Agent Skill for designing, building, reviewing, and refining web interfaces. It connects product discovery, art direction, UX, frontend implementation, visual QA, and optional real-image sourcing in one adaptable workflow.
 
-**v1.2.1 · Experimental.** Previously named Fixenzo UI Studio. Invoke it with `$fixen-ui-studio`. This is a Markdown/YAML instruction package; the host agent supplies its model, tools, and permissions.
+**v1.3.0 · Experimental.** Previously named Fixenzo UI Studio. Invoke it with `$fixen-ui-studio`. This is a Markdown/YAML instruction package; the host agent supplies its model, tools, and permissions.
 
 ## What it helps you do
 
@@ -23,7 +23,7 @@ Fixen UI Studio is an open source Agent Skill for designing, building, reviewing
 
 ## Install in Codex
 
-Download `fixen-ui-studio-v1.2.1.zip` from [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Extract the `fixen-ui-studio/` folder into your Codex skills directory so the entrypoint is:
+Download `fixen-ui-studio-v1.3.0.zip` from [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Extract the `fixen-ui-studio/` folder into your Codex skills directory so the entrypoint is:
 
 ```text
 ~/.codex/skills/fixen-ui-studio/SKILL.md
