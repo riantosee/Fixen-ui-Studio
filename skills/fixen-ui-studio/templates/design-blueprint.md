@@ -14,6 +14,13 @@
 - Signature visual idea:
 - Patterns intentionally avoided:
 
+## Locale and content facts
+- Language(s) and register:
+- Region, currency, and time zone (decide separately):
+- Text direction and font/script coverage:
+- Business facts supplied by the user:
+- Facts still missing (shown as visible placeholders):
+
 ## Information architecture
 - Page/section structure:
 - Content priority:
