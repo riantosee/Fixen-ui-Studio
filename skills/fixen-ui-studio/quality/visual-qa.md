@@ -31,3 +31,14 @@ Add tablet or other target sizes when the layout requires them. These are test v
 ## Evidence
 Record the viewport, route, observed defect, severity, and whether it was fixed. If no screenshot/browser tool is available, label the review static-only.
 
+## Static-only checks (when nothing can be rendered)
+Many hosts cannot render or screenshot. Do not stop at "not verified"; run these from the source and report them as static-only, never as a visual pass.
+- **Contrast:** compute ratios from the actual token values (relative luminance per WCAG). Body text 4.5:1; large text and UI boundaries 3:1. Check text on every colored surface, including button labels and text over images.
+- **Overflow risks:** fixed widths, `white-space: nowrap`, long unbroken strings, missing `min-width: 0` on flex or grid children, wide tables without a scroll container.
+- **Responsive:** fluid sizing (`clamp`, `minmax`, `auto-fit`) and wrapping at 390 px; tap targets 44 px; no hover-only content.
+- **Semantics:** one `h1`, heading order, landmarks, labels, accessible names for icon controls, alt text, `lang`.
+- **Focus and motion:** visible `:focus-visible`, tab order follows reading order, reduced-motion handled.
+- **Consistency:** every color, size, and radius used comes from the tokens; states exist for controls.
+- **Content integrity:** list every placeholder still in the page and every business fact that was not supplied.
+If code execution is available, a short script can compute contrast ratios from the token list instead of estimating by eye.
+
