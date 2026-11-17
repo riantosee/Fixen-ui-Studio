@@ -56,6 +56,24 @@ class PackageValidation(unittest.TestCase):
         (self.root / "README.md").write_text("[Skill](skills/fixen-ui-studio/SKILL.md)", encoding="utf-8")
         self.run_validator()
 
+    def test_nested_reference_missing(self):
+        (self.skill / "design").mkdir()
+        (self.skill / "design/guide.md").write_text("See `systems/missing.md`.\n", encoding="utf-8")
+        (self.skill / "systems").mkdir()
+        with self.assertRaisesRegex(SystemExit, "broken skill reference"):
+            self.run_validator()
+
+    def test_example_project_path_is_not_a_skill_reference(self):
+        (self.skill / "design").mkdir()
+        (self.skill / "design/guide.md").write_text("Store it in `docs/image-assets.md`.\n", encoding="utf-8")
+        self.run_validator()
+
+    def test_version_must_match_changelog(self):
+        (self.skill / "SKILL.md").write_text(self.front.replace("license: MIT", "license: MIT\nmetadata:\n  version: \"1.0.0\""), encoding="utf-8")
+        (self.root / "CHANGELOG.md").write_text("# Changelog\n\n## 1.1.0 — 2026-01-01\n", encoding="utf-8")
+        with self.assertRaisesRegex(SystemExit, "does not match latest CHANGELOG"):
+            self.run_validator()
+
 
 if __name__ == "__main__":
     unittest.main()
