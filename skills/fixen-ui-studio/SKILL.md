@@ -4,7 +4,7 @@ description: Design, redesign, audit, and implement distinctive web interfaces. 
 license: MIT
 metadata:
   author: riantosee
-  version: "1.2.0"
+  version: "1.2.1"
   mode: "experimental-hybrid"
 ---
 
@@ -54,6 +54,7 @@ Resolve from the prompt and repository, without asking questions that can be ans
 - Required content and information hierarchy
 - Brand personality and visual constraints
 - Target devices and responsive expectations
+- Product language, target locales, and existing i18n conventions when relevant
 - Existing stack, components, and design conventions
 - Accessibility, performance, and integration constraints
 
@@ -95,6 +96,12 @@ Before coding, define the minimum useful specification:
 9. Accessibility considerations
 
 For large work, use `templates/design-blueprint.md`. For small tasks, summarize the blueprint in a few bullets.
+
+### Languages and localization, when relevant
+
+Communicate in the language requested by the user. Keep the product UI in the requested language and preserve an existing repository's content and i18n conventions. For a new product without language direction, use English and state that assumption. Do not translate an existing interface or add locale infrastructure unless the task requires it.
+
+For multilingual content, regional formatting, language switching, or RTL layouts, read `systems/localization.md`. Keep language, currency, and time zone as separate choices; account for message structure, text expansion, font coverage, and accessible directionality. Record relevant locale decisions in the blueprint and report only the locales and interactions actually verified.
 
 ### Image sourcing, when relevant
 
@@ -175,6 +182,7 @@ Load only the relevant guidance; do not read every reference file for every task
 - Image search, candidate selection, acquisition, and crop QA: `design/asset-sourcing.md`; record selections with `templates/asset-register.md`
 - UX and interaction: `design/ux-architecture.md`, `design/interaction-design.md`
 - Content, labels, and captions: `references/content-design.md`; visual hierarchy or density decisions: `references/visual-language.md`
+- Multilingual UI, locale formats, fonts, and RTL: `systems/localization.md`; evaluation briefs: `benchmarks/localization-cases.md`
 - Foundations and components: `systems/design-tokens.md`, `systems/component-architecture.md`, `systems/responsive-accessibility.md`
 - Implementation: `engineering/implementation-principles.md` and the relevant stack guide
 - Quality: `quality/visual-qa.md`, `quality/design-score.md`, `quality/refinement-loop.md`

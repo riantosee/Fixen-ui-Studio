@@ -34,6 +34,12 @@ Ask naturally, for example:
 
 Slash commands are not required. The agent should infer the requested mode from intent.
 
+## Languages
+
+English is the primary repository documentation language. Translated quick starts are linked from the [main README](https://github.com/riantosee/Fixen-ui-Studio#readme). Communicate in the user's requested language and preserve the product's existing language strategy. For a new product without language direction, use English and state the assumption.
+
+For multilingual UI, read [localization guidance](systems/localization.md). It covers locale formatting, message catalogs, text expansion, fonts, accessible language selection, and RTL. Use [localization scenarios](benchmarks/localization-cases.md) for relevant evaluation; they are briefs, not recorded passing tests. The skill installs no translation engine and does not guarantee all-language quality.
+
 ## Tool capabilities
 
 The skill remains useful without external tools. Browser automation, screenshot capture, image generation, Figma integrations, and code execution improve the result but are optional. The agent must never claim to have used a tool it does not have.
@@ -57,6 +63,6 @@ Start with `benchmarks/benchmark-suite.md`. Score outputs using `benchmarks/scor
 
 ## Version
 
-v1.2.0 — rebrands the skill to Fixen UI Studio, adds repository safety/contribution guidance at the root project, and retains optional browser/web image sourcing, candidate and credit records, crop/integration checks, and image-sourcing test cases. Benchmark scores are not pre-claimed; run the suite to establish a baseline.
+v1.2.1 — adds English-first multilingual documentation and conditional UI localization guidance; v1.2.0 rebrands the skill to Fixen UI Studio, adds repository safety/contribution guidance at the root project, and retains optional browser/web image sourcing, candidate and credit records, crop/integration checks, and image-sourcing test cases. Benchmark scores are not pre-claimed; run the suite to establish a baseline.
 
 
