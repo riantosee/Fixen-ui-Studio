@@ -1,39 +1,47 @@
-# Berkontribusi ke Fixen UI Studio
+# Contributing to Fixen UI Studio
 
-Kontribusi dokumentasi, workflow, accessibility, image sourcing, dan benchmark dipersilakan. Baca [Code of Conduct](CODE_OF_CONDUCT.md) dan [Security Policy](SECURITY.md) terlebih dahulu.
+Contributions to documentation, design workflows, accessibility, localization, image sourcing, and evaluation are welcome. Read the [Code of Conduct](CODE_OF_CONDUCT.md) and [Security Policy](SECURITY.md) first.
 
-## Memilih perubahan
+## Choose a focused change
 
-- Typo dan perbaikan kecil boleh langsung melalui PR.
-- Untuk workflow baru, perubahan luas, atau perubahan perilaku, buat issue yang menjelaskan kebutuhan dan acceptance criteria.
-- Kerentanan keamanan dilaporkan privat, bukan issue publik. Pengujian defensif yang aman tetap boleh disertakan sebagai fixture sintetis.
+- Small fixes and typos can go directly to a pull request.
+- For a new workflow or substantial behavior change, open an issue describing the need and observable acceptance criteria.
+- Report vulnerabilities privately. Use inert, synthetic local fixtures for safe defensive examples.
 
-Prioritaskan petunjuk yang mengubah keputusan agen secara konkret. Hindari memperpanjang prompt dengan nasihat umum, persona tambahan, aturan absolut tanpa alasan, atau instruksi yang mengabaikan permintaan pengguna. Pertahankan mode audit-only, batas tool, dan workflow ringan untuk perubahan kecil.
+Favor guidance that changes an agent's decisions. Avoid generic advice, extra personas, unjustified absolute rules, or instructions that override the user's scope. Preserve audit-only mode, honest tool limits, and lightweight handling of small changes.
 
-## Alur kerja
+## Workflow
 
-1. Fork repo dan buat branch untuk satu perubahan yang terfokus.
-2. Edit paket di `skills/fixen-ui-studio/`; jangan mengubah instalasi global pengguna.
-3. Kaitkan referensi baru dari entrypoint atau referensi yang relevan dan jelaskan kapan dibaca. Jangan memaksa semua referensi dimuat setiap tugas.
-4. Jalankan `python -m pip install -r requirements-dev.txt`, `python scripts/validate.py`, dan `python -m unittest discover -s scripts -p "test_*.py" -v`.
-5. Untuk perubahan perilaku, jalankan setidaknya satu brief realistis yang relevan. Sertakan prompt, kondisi alat, hasil, dan hal yang tidak diuji. Perubahan dokumentasi kecil tidak wajib menjalankan seluruh benchmark.
-6. Buka PR dengan masalah, hasil perubahan, dan bukti validasi. Tautkan issue bila ada.
+1. Fork the repository and create a branch for one focused change.
+2. Edit `skills/fixen-ui-studio/`; do not modify a user's global installation.
+3. Link new references from the entrypoint or the relevant guide and explain when to read them. Do not load every reference for every task.
+4. Run `python -m pip install -r requirements-dev.txt`, `python scripts/validate.py`, and `python -m unittest discover -s scripts -p "test_*.py" -v`.
+5. For behavior changes, exercise a relevant realistic brief with synthetic data. Record the prompt, tools, observed results, and untested areas. Small documentation changes do not require the entire benchmark suite.
+6. Open a PR describing the problem, resulting behavior, and validation evidence. Link the issue when applicable.
 
-## Standar bukti
+## Documentation and translation
 
-- Gunakan data sintetis dan fixture yang hak penggunaannya jelas.
-- Catat browser, viewport, renderer, dan versi/konfigurasi yang berpengaruh.
-- Bedakan pengecekan statis, simulasi, implementasi, dan uji browser nyata.
-- Berikan screenshot jika menilai layout; build sukses bukan bukti desain sukses.
-- Jangan mengklaim compliance, skor benchmark, penggunaan alat, atau hak aset tanpa bukti.
-- Benchmark perbandingan harus menjaga brief, tools, kondisi, dan rubrik setara.
+English is the primary documentation language. Translated quick starts live in `docs/README.<locale>.md`; the root `README.md` links each available translation. A translation may be proposed or reviewed in its own language; include a short English description when practical so maintainers can route it.
 
-## Keamanan kontribusi
+- Preserve `$fixen-ui-studio`, code, paths, version numbers, and command behavior.
+- Translate meaning naturally, including experimental status and validation limits. Do not imply guaranteed language support, security, or accessibility conformance.
+- Keep MIT permissions and third-party asset licensing accurate. Translation does not create a new license restriction.
+- Use working relative links from each document's directory. Include installation, examples, and a link back to the primary README.
+- Update affected translations with a behavior change, or explicitly describe the remaining translation gap in the PR. When documentation differs, reconcile it against the English README and changelog.
+- For UI localization changes, use the relevant cases in `skills/fixen-ui-studio/benchmarks/localization-cases.md`; report which locales and viewports were actually inspected.
 
-Jangan sertakan rahasia, token, kredensial, data pribadi, salinan proyek privat, atau eksploit yang membahayakan sistem nyata. Jangan menyisipkan perintah yang diam-diam mengunggah data, mengubah izin, menjalankan payload, atau mengabaikan otorisasi pengguna. Reproduksi keamanan harus minimal, tidak aktif menyerang, dan memakai sandbox/fixture lokal; kirim rincian sensitif melalui proses privat.
+## Evidence standards
 
-Kontribusi dengan penyalahgunaan keamanan, klaim menyesatkan, plagiarisme, atau pelanggaran lisensi akan ditolak. Maintainer dapat menutup issue/PR dan membatasi partisipasi sesuai Code of Conduct. Kebijakan moderasi ini tidak menambahkan pembatasan baru pada MIT.
+Use synthetic data and assets with clear usage rights. Record relevant browser, viewport, renderer, and configuration details. Distinguish static checks from simulation, implementation, and real browser tests. Include screenshots for layout findings; a successful build alone is not evidence of a successful design.
 
-## Lisensi
+Do not claim compliance, benchmark scores, translation review, tool execution, or asset rights without evidence. Comparative benchmarks need equivalent prompts, context, tools, time budgets, and scoring conditions.
 
-Dengan mengirim kontribusi, kamu menyatakan berhak menyumbangkannya dan setuju kontribusi yang diterima tersedia di bawah [MIT License](LICENSE). Aset pihak ketiga harus dicatat dengan lisensinya sendiri; jangan menandainya MIT jika tidak demikian. Tidak ada CLA tambahan untuk kontribusi biasa.
+## Safe contributions
+
+Do not include secrets, credentials, private data, proprietary project copies, or exploits targeting real systems. Do not embed hidden instructions to upload data, change permissions, run payloads, or bypass authorization. Security reproductions must be minimal and inert; send sensitive details through the private reporting process.
+
+Contributions involving security abuse, misleading claims, plagiarism, or license violations will be rejected. Maintainers may close issues/PRs or restrict participation under the Code of Conduct. Moderation does not add conditions to MIT.
+
+## License
+
+By contributing, you represent that you have the right to submit your work and agree that accepted contributions are available under the [MIT License](LICENSE). Record third-party assets under their own licenses. No additional CLA is required for ordinary contributions.

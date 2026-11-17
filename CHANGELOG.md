@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.1 — 2026-11-17
+
+- Made English the primary README and contribution-guide language.
+- Added linked quick starts in Indonesian, Spanish, Brazilian Portuguese, and Simplified Chinese.
+- Added conditional UI localization guidance for message catalogs, locale formats, language selection, font coverage, and RTL layouts.
+- Preserved existing product languages; English is a stated default only for new products with no language direction.
+- Added locale fields to the design blueprint and five localization evaluation briefs without claiming they passed browser QA.
+- Documented translation contributions and language-review limitations; retained MIT and project security policies.
+
 ## 1.2.0 — 2026-11-16
 
 - Rebranded the installable skill from Fixenzo UI Studio to Fixen UI Studio.

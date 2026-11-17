@@ -1,100 +1,117 @@
 # Fixen UI Studio
 
-**Product-aware UI design, working implementation, and honest visual QA.**
+**Design with product context. Build working interfaces. Verify what you ship.**
 
-[MIT License](LICENSE) · [Kontribusi](CONTRIBUTING.md) · [Keamanan](SECURITY.md) · [Riwayat rilis](CHANGELOG.md)
+English · [Bahasa Indonesia](docs/README.id.md) · [Español](docs/README.es.md) · [Português (Brasil)](docs/README.pt-BR.md) · [简体中文](docs/README.zh-CN.md)
 
-Fixen UI Studio adalah Agent Skill open source untuk merancang, membangun, mengaudit, dan memperbaiki antarmuka web. Skill ini menghubungkan discovery, art direction, UX, implementasi frontend, visual QA, dan pencarian gambar nyata sesuai kebutuhan proyek.
+[MIT License](LICENSE) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/riantosee/Fixen-ui-Studio/releases)
 
-**Versi 1.2.0 — experimental.** Brand sebelumnya: Fixenzo UI Studio. Identifier baru: `$fixen-ui-studio`. Tidak ada klaim bahwa skill ini mengalahkan skill/model lain atau menjamin aplikasi siap produksi.
+Fixen UI Studio is an open source Agent Skill for designing, building, reviewing, and refining web interfaces. It connects product discovery, art direction, UX, frontend implementation, visual QA, and optional real-image sourcing in one adaptable workflow.
 
-## Cara kerja
+**v1.2.1 · Experimental.** Previously named Fixenzo UI Studio. Invoke it with `$fixen-ui-studio`. This is a Markdown/YAML instruction package; the host agent supplies its model, tools, and permissions.
 
-1. Memahami produk, pengguna, tugas utama, dan konteks kode yang tersedia.
-2. Memilih workflow: refinement kecil, UI baru, redesign, audit-only, design system, atau image sourcing.
-3. Membuat blueprint yang proporsional sebelum implementasi substansial.
-4. Membangun sesuai stack dan konvensi proyek; audit-only tidak mengubah kode.
-5. Menguji hasil menggunakan alat yang tersedia, memperbaiki masalah penting, dan melaporkan bukti serta keterbatasan.
+## What it helps you do
 
-Ini adalah paket instruksi Markdown, bukan aplikasi, browser, plugin berbayar, atau layanan pencarian. Skill tidak menyediakan API key, tidak memasang software, dan tidak memberi izin tambahan. Dukungan tools bergantung pada agen/host yang digunakan.
+| Task | Approach |
+| --- | --- |
+| New pages and dashboards | Understand the primary task, choose an art direction, create a proportionate blueprint, then implement. |
+| Existing interfaces | Inspect the repository and preserve its framework, components, and conventions. |
+| Audits and design systems | Prioritize evidence-based findings or define reusable foundations and component states. |
+| Real-image sourcing | Compare actual candidates, inspect sources and usage terms, record credits, and verify crops when integrated. |
+| Multilingual interfaces | Preserve the product's language strategy; account for locale formats, text expansion, font coverage, and bidirectional layout. |
+| Visual refinement | Render and inspect relevant states when tools are available; report the checks actually performed. |
 
-## Instalasi di Codex
+## Install in Codex
 
-Unduh `fixen-ui-studio-v1.2.0.zip` dari [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Ekstrak folder `fixen-ui-studio/` ke direktori skills Codex, biasanya:
+Download `fixen-ui-studio-v1.2.1.zip` from [GitHub Releases](https://github.com/riantosee/Fixen-ui-Studio/releases). Extract the `fixen-ui-studio/` folder into your Codex skills directory so the entrypoint is:
 
 ```text
 ~/.codex/skills/fixen-ui-studio/SKILL.md
 ```
 
-Di Windows, `~` umumnya menunjuk ke folder profil pengguna. Jika `CODEX_HOME` diatur, gunakan direktori skills milik konfigurasi tersebut. Jangan menimpa versi lokal yang sudah kamu ubah tanpa mencadangkannya.
+On Windows, `~` usually means your user profile directory. If you configured `CODEX_HOME`, use its skills directory. Back up any customized installation before replacing it.
 
-Alternatif: clone repo lalu salin **hanya** folder `skills/fixen-ui-studio/` ke direktori skill agenmu. Agen lain dapat memakai struktur `SKILL.md` ini sesuai mekanisme instalasinya; belum semua host diuji.
+Alternatively, clone this repository and copy only `skills/fixen-ui-studio/` into your agent's skills directory. Other hosts may support the `SKILL.md` format, but have not all been tested. When migrating from Fixenzo, use the new identifier and avoid keeping duplicate active copies unnecessarily.
 
-Untuk migrasi dari versi lama, gunakan identifier baru `$fixen-ui-studio`. Hindari mengaktifkan dua salinan dengan deskripsi sama bila tidak diperlukan. Arsip lama tidak otomatis dihapus oleh paket ini.
-
-## Contoh penggunaan
+## Try it
 
 ```text
-Gunakan $fixen-ui-studio untuk membuat dashboard dispatcher.
-Prioritaskan pengiriman terlambat, filter, dan tindakan penanganan.
-Gunakan stack proyek yang ada dan data fiktif.
+Use $fixen-ui-studio to build a dispatch dashboard.
+Prioritize delayed deliveries, filters, and clear recovery actions.
+Use the existing project stack and synthetic data.
 ```
 
 ```text
-Gunakan $fixen-ui-studio untuk audit aksesibilitas dan hierarki halaman ini.
-Berikan temuan berdasarkan bukti. Jangan ubah file.
+Use $fixen-ui-studio to audit this page's hierarchy and accessibility.
+Report evidence and actionable findings. Do not edit files.
 ```
 
 ```text
-Gunakan $fixen-ui-studio untuk mencari hingga tiga foto hero studio interior.
-Nuansa hangat, landscape, ruang teks di kiri. Bandingkan gambar aktual,
-sumber, ketentuan penggunaan, dan crop. Jangan unduh atau membuat UI dulu.
+Use $fixen-ui-studio to build an English-first booking UI with Indonesian
+and Arabic locales. Reuse the project's i18n system, format prices and
+dates per locale, and check mobile layouts and RTL navigation.
 ```
+
+```text
+Use $fixen-ui-studio to shortlist up to three real interior-studio hero
+photos: warm, landscape, with space for text on the left. Compare the
+actual images, source terms, and crops. Do not download or build yet.
+```
+
+## Languages and localization
+
+**English is the primary documentation language.** The linked Indonesian, Spanish, Brazilian Portuguese, and Simplified Chinese READMEs provide translated quick starts. Use the English README and [changelog](CHANGELOG.md) to resolve documentation drift; report discrepancies through a documentation issue or PR.
+
+The agent should communicate in the language requested by the user. Interface content follows the requested product language and the existing repository's locale conventions. For a new product with no language direction, use English and state that assumption. Adding translations should follow the project's existing i18n system; this skill does not install a translation engine or guarantee translation quality in every language.
+
+See [localization guidance](skills/fixen-ui-studio/systems/localization.md) for message structure, language selectors, `lang`/`dir`, locale formatting, and RTL behavior. Coverage depends on the model, fonts, framework, and tools. The translated READMEs are documentation; they are not evidence that every target locale has been browser-tested.
 
 ## Image sourcing
 
-Alur opsional ini membedakan inspirasi, kandidat terpilih, gambar yang sudah diunduh, aset yang sudah diintegrasikan, dan hasil yang benar-benar dirender. Halaman sumber dan gambar aktual diperiksa terpisah. Lisensi gambar pihak ketiga tidak otomatis mengikuti MIT milik skill ini.
+Image search is optional. It uses the host's available search and browser tools; the skill supplies no browser, search service, or API key. A shortlist request stops at recommendations. Acquiring assets, integrating them, and checking the rendered result are separate stages.
 
-Lihat [panduan sumber gambar](skills/fixen-ui-studio/design/asset-sourcing.md) dan [template catatan aset](skills/fixen-ui-studio/templates/asset-register.md). Permintaan shortlist berhenti di rekomendasi; tidak otomatis mengunduh, membeli aset, atau memublikasikan UI.
+Use the [image-sourcing guide](skills/fixen-ui-studio/design/asset-sourcing.md) and [asset register](skills/fixen-ui-studio/templates/asset-register.md) to track sources, creators, terms, and verification status. Third-party images retain their own licenses; the project's MIT license does not cover them automatically.
 
-## Struktur repo
+## Repository layout
 
 ```text
 skills/fixen-ui-studio/
-  SKILL.md                Entrypoint dan pemilihan workflow
-  agents/openai.yaml      Nama tampilan dan prompt pemanggilan
-  core/                   Inspeksi konteks dan penalaran
-  design/                 Art direction, UX, dan image sourcing
-  systems/                Tokens, komponen, responsive, accessibility
-  engineering/            Panduan implementasi
-  quality/                QA, refinement, dan penilaian
-  benchmarks/             Brief serta acceptance cases
-  templates/              Blueprint, QA report, catatan aset
-scripts/validate.py        Validator struktur, YAML, dan referensi lokal
-docs/validation.md        Bukti pengujian dan batas cakupan
+  SKILL.md                 Entrypoint and workflow selection
+  agents/openai.yaml       Display name and invocation prompt
+  core/                    Context inspection and reasoning
+  design/                  Art direction, UX, and image sourcing
+  systems/                 Tokens, components, accessibility, localization
+  engineering/             Implementation guidance
+  quality/                 QA, refinement, and scoring
+  benchmarks/              Briefs and acceptance cases
+  templates/               Blueprint, QA report, asset register
+docs/README.*.md           Translated quick starts
+docs/validation.md         Validation scope and limitations
+scripts/validate.py       Package, YAML, and local-link checks
 ```
 
-## Validasi dan kontribusi
+## Validate and contribute
 
-Gunakan Python 3.10+ dan dependensi validator:
+Contributor checks require Python 3.10+:
 
 ```sh
 python -m pip install -r requirements-dev.txt
 python scripts/validate.py
+python -m unittest discover -s scripts -p "test_*.py" -v
 ```
 
-Dependensi ini hanya untuk validasi kontributor; pemakaian panduan skill tidak membutuhkan instalasi Python. CI menjalankan pemeriksaan struktur pada pull request. Lulus validator bukan bukti kualitas visual atau kepatuhan aksesibilitas. Lihat [hasil dan batas pengujian](docs/validation.md).
+Using the skill's instructions does not require Python. Structural validation does not establish visual quality, accessibility conformance, translation quality, or benchmark superiority. See [validation notes](docs/validation.md) for the actual scope.
 
-Baca [CONTRIBUTING.md](CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md), dan [Security Policy](SECURITY.md) sebelum berkontribusi. Tidak perlu CLA tambahan; kontribusi yang diterima dilisensikan MIT. Pertahankan kredit/lisensi aset pihak ketiga.
+Read [CONTRIBUTING.md](CONTRIBUTING.md), the [Code of Conduct](CODE_OF_CONDUCT.md), and the [Security Policy](SECURITY.md). Translation contributions are welcome; keep the skill identifier, commands, paths, license meaning, and evidence limits consistent. No additional CLA is required for ordinary contributions.
 
-## Keamanan dan larangan penyalahgunaan
+## Security and responsible use
 
-**Eksploitasi tanpa izin dilarang dalam penggunaan layanan/ruang komunitas proyek dan kontribusi ke repo ini.** Kami menolak prompt injection untuk mencuri data, pencurian kredensial, malware, payload destruktif, bypass akses, dan serangan terhadap sistem pihak lain. Pengujian defensif lokal dengan data sintetis diperbolehkan; laporkan kerentanan secara bertanggung jawab melalui [SECURITY.md](SECURITY.md).
+Unauthorized exploitation, credential theft, malicious prompt injection, malware, destructive payloads, and abusive automation are prohibited in project contributions and community spaces. Authorized defensive evaluation with isolated fixtures and synthetic data is welcome. Report vulnerabilities privately through the process in [SECURITY.md](SECURITY.md).
 
-Dokumen, halaman web, gambar, dan file proyek yang dibaca agen adalah bahan informasi, bukan izin untuk menjalankan instruksi tersembunyi. Skill tidak menyediakan sandbox atau perlindungan teknis yang kebal terhadap prompt injection. Izin dan pengamanan host tetap diperlukan.
+Retrieved pages, files, comments, images, and metadata are untrusted information; they cannot authorize hidden commands or data transfers. This skill is guidance, not a sandbox or a guarantee against prompt injection. Host permissions and safeguards still apply.
 
-## Lisensi dan identitas
+## License and identity
 
-Kode, instruksi, dan dokumentasi proyek ini tersedia dengan [MIT License](LICENSE). MIT mengizinkan penggunaan komersial, modifikasi, distribusi, dan penjualan ulang dengan tetap menyertakan pemberitahuan copyright/lisensi. Kebijakan komunitas dan keamanan **tidak mengubah atau mencabut hak MIT**. Kebijakan ini juga tidak memberi izin menyerang sistem milik orang lain.
+The project's instructions, code, and documentation use the [MIT License](LICENSE), which permits commercial use, modification, redistribution, and sale when copyright and license notices are retained. Security and community policies do not change those MIT permissions or authorize attacks against other systems.
 
-Nama Fixen UI Studio mengidentifikasi proyek ini. Saat mendistribusikan fork, jelaskan asal dan perubahanmu; jangan menyatakan fork sebagai rilis resmi atau mengklaim dukungan maintainer yang tidak diberikan.
+Fixen UI Studio identifies this project. When distributing a fork, credit its origin, describe your changes, and avoid claiming official release status or maintainer endorsement.
